@@ -219,23 +219,25 @@ const Navbar = () => {
                   </SignUpButton>
                 </Unauthenticated>
                 <Authenticated>
-                  <Link 
-                    href="/dashboard" 
-                    className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                  >
-                    Dashboard
-                  </Link>
-                  <UserButton 
-                    afterSignOutUrl="/"
-                    appearance={{
-                      elements: {
-                        userButtonAvatarBox: "w-9 h-9 border-2 border-white/20",
-                        userButtonPopoverCard: "rounded-2xl shadow-xl",
-                        userButtonPopoverActionButton: "rounded-xl"
-                      }
-                    }}
-                  />
-                </Authenticated>
+  <Link 
+    href="/dashboard" 
+    className="w-full px-4 py-2.5 text-sm font-medium text-center text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800/50 rounded-xl transition-colors"
+  >
+    Dashboard
+  </Link>
+  <div className="flex justify-center">
+    <UserButton 
+      afterSignOutUrl="/"
+      appearance={{
+        elements: {
+          userButtonAvatarBox: "w-10 h-10 border-2 border-white/20 mx-auto",
+          userButtonPopoverCard: "rounded-2xl shadow-xl",
+          userButtonPopoverActionButton: "rounded-xl"
+        }
+      }}
+    />
+  </div>
+</Authenticated>
               </div>
             </div>
 

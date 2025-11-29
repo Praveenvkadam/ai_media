@@ -1,10 +1,5 @@
-import { ClerkProvider } from "@clerk/nextjs";
-import { ConvexClientProvider } from "./ConvexClientProvider";
-import "./globals.css";
-import { ThemeProvider } from "../components/theme-provider";
-import { dark } from "@clerk/themes";
-import Navbar from "../components/Navbar";
-import Footer from "@/components/Footer";
+import './globals.css';
+import RootLayoutClient from './client-layout';
 
 export const metadata = {
   title: "My App",
@@ -15,17 +10,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="min-h-screen bg-gray-100 dark:bg-gray-900">
-        <ClerkProvider appearance={{ theme: dark }}>
-          <ConvexClientProvider>
-            <ThemeProvider>
-              <Navbar />
-              <main className="pt-20 px-4 sm:px-6 max-w-7xl mx-auto w-full">
-                {children}
-              </main>
-            </ThemeProvider>
-          </ConvexClientProvider>
-        </ClerkProvider>
-        <Footer />
+        <RootLayoutClient>
+          {children}
+        </RootLayoutClient>
       </body>
     </html>
   );
