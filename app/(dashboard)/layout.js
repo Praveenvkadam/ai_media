@@ -112,9 +112,13 @@ export default function DashboardLayout({ children }) {
      <header className={`fixed top-0 h-14 bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 z-20 flex items-center justify-end transition-all duration-300 ${
   isSidebarCollapsed ? "left-16 w-[calc(100%-4rem)]" : "left-64 w-[calc(100%-16rem)]"
 }`}>
-  <div className="flex items-center space-x-4 px-6 w-full justify-end">
-    {/* Theme Toggle */}
-    <button
+  <div className="flex items-center space-x-4 px-6 w-full justify-between">
+    <Link href="/" className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors">
+      <Home className="w-5 h-5 text-slate-600 dark:text-slate-300" />
+    </Link>
+    <div className="flex items-center space-x-4">
+      {/* Theme Toggle */}
+      <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
       aria-label="Toggle theme"
@@ -138,6 +142,7 @@ export default function DashboardLayout({ children }) {
       />
     </div>
   </div>
+</div>
 </header>
       {/* Main content area */}
       <div className={`pt-14 transition-all duration-300 ${
